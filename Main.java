@@ -5,13 +5,13 @@ public class Main{
         System.out.println("Principal");
         Terrestre carro1;
         carro1 = new Terrestre();
-        System.out.println(carro1.posicion.getPosX());
+        System.out.println(carro1.getPosicion().getPosX());
     }
 }
 
 class Vehiculo {
-    int noPasajeros;
-    Posicion posicion;
+    private int noPasajeros;
+    private Posicion posicion;
 
     public Vehiculo (){
         noPasajeros = 2;
@@ -20,19 +20,28 @@ class Vehiculo {
         this.noPasajeros = noPasajeros;
         posicion = new Posicion();
     }
+    public int getPasajeros(){
+        return noPasajeros;
+    }
+    public Posicion getPosicion(){
+        return posicion;
+    }
 }
 
 class Terrestre extends Vehiculo{
-    int noRuedas;
+    private int noRuedas;
 
     public Terrestre (){
         super(3);
         noRuedas = 4;
     }
+    public int getNoRuedas(){
+        return noRuedas;
+    }
 }
 
 class Posicion {
-    int x, y;
+    private int x, y;
     
     public Posicion (){
         x = 240;
